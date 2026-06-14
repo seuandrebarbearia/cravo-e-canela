@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17120f">
+  <meta name="description" content="Vitrine de bolos Cravo e Canela com pedido de orçamento pelo WhatsApp.">
+  <title>Cravo e Canela Bolos | Peça seu orçamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=bolos-6">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Cravo e Canela, início">
+      <span class="brand-mark">C</span>
+      <span>
+        <strong>Cravo e Canela</strong>
+        <small>Bolos e confeitaria</small>
+      </span>
+    </a>
+    <button class="quote-shortcut" type="button" data-open-quote>
+      Orçamento
+      <span id="quoteCount">0</span>
+    </button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">Encomendas abertas</div>
+        <p class="eyebrow">Cravo e Canela Confeitaria</p>
+        <h1>Bolos artesanais para celebrar do seu jeito.</h1>
+        <p class="hero-copy">Escolha uma inspiração e conte os detalhes da sua ocasião. Preparamos o orçamento com tamanho, sabor, recheio e decoração.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#produtos">Escolher meu bolo</a>
+          <a class="button button-ghost" href="https://maps.app.goo.gl/PXNwevDdLcSttzAp9" target="_blank" rel="noreferrer">Abrir no Maps</a>
+        </div>
+        <div class="hero-meta" aria-label="Informações da Cravo e Canela">
+          <span><strong>4,6</strong> no Google Maps</span>
+          <span><strong>Cachoeira do Bom Jesus</strong> Florianópolis</span>
+          <span><strong>(48) 99915-1951</strong></span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/mapa-real-4.jpg" alt="Bolo de morango da Cravo e Canela">
+        <div class="hero-note">
+          <span>Produção artesanal</span>
+          <strong>Feito sob encomenda</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" aria-label="Como pedir">
+      <div><strong>01</strong><span>Escolha pelas fotos</span></div>
+      <div><strong>02</strong><span>Conte os detalhes</span></div>
+      <div><strong>03</strong><span>Receba o orçamento</span></div>
+    </section>
+
+    <section class="catalog" id="produtos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Nossa vitrine</p>
+          <h2>Bolos para cada ocasião</h2>
+        </div>
+        <p>Fotos do perfil público da Cravo e Canela no Google Maps. Consulte sabores, tamanhos, decoração e disponibilidade.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filtrar produtos">
+        <button class="filter active" type="button" data-filter="todos">Todos</button>
+        <button class="filter" type="button" data-filter="individuais">Individuais</button>
+        <button class="filter" type="button" data-filter="inteiros">Bolos inteiros</button>
+        <button class="filter" type="button" data-filter="festas">Festas</button>
+        <button class="filter" type="button" data-filter="personalizados">Personalizados</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="maps-banner">
+      <div>
+        <p class="eyebrow">Venha nos conhecer</p>
+        <h2>Visite nosso espaço. Estamos esperando você.</h2>
+        <p>Passe na Cravo e Canela para conhecer nossas delícias e aproveitar um momento especial com a gente.</p>
+      </div>
+      <a class="location-button" href="https://maps.app.goo.gl/PXNwevDdLcSttzAp9" target="_blank" rel="noreferrer">
+        <span class="location-icon" aria-hidden="true">⌖</span>
+        <span>
+          <strong>Traçar rota no Maps</strong>
+          <small>Av. Luiz Boiteux Piazza, 2452</small>
+        </span>
+        <span class="location-arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand">
+      <span class="brand-mark">C</span>
+      <span><strong>Cravo e Canela</strong><small>Bolos e confeitaria</small></span>
+    </div>
+    <p>Catálogo demonstrativo com fotos do perfil público no Maps.</p>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="quote-drawer" id="quoteDrawer" aria-hidden="true" aria-labelledby="quoteTitle">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">Lista de interesse</p>
+        <h2 id="quoteTitle">Pedir orçamento</h2>
+      </div>
+      <button class="icon-button" type="button" data-close-quote aria-label="Fechar orçamento">×</button>
+    </div>
+
+    <form id="quoteForm" novalidate>
+      <div class="quote-items" id="quoteItems"></div>
+      <div class="empty-state" id="emptyState">
+        <strong>Sua lista está vazia</strong>
+        <p>Clique em um produto para começar seu orçamento.</p>
+        <button class="button button-dark" type="button" data-close-quote>Ver produtos</button>
+      </div>
+
+      <div class="customer-fields" id="customerFields">
+        <h3>Seus dados</h3>
+        <label>
+          Nome *
+          <input type="text" id="customerName" autocomplete="name" placeholder="Como podemos chamar você?" required>
+        </label>
+        <div class="field-row">
+          <label>
+            WhatsApp *
+            <input type="tel" id="customerPhone" autocomplete="tel" placeholder="(48) 99999-9999" required>
+          </label>
+          <label>
+            CPF
+            <input type="text" id="customerCpf" inputmode="numeric" placeholder="Opcional">
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Como deseja receber? *</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="fulfillment" value="Entrega" checked> Entrega</label>
+            <label class="choice"><input type="radio" name="fulfillment" value="Retirada"> Retirada</label>
+          </div>
+        </fieldset>
+
+        <div class="address-fields" id="addressFields">
+          <div class="field-row field-row-address">
+            <label>Rua *<input type="text" id="street" autocomplete="street-address"></label>
+            <label>Número *<input type="text" id="streetNumber"></label>
+          </div>
+          <div class="field-row">
+            <label>Bairro *<input type="text" id="district"></label>
+            <label>Complemento<input type="text" id="complement"></label>
+          </div>
+          <label>Ponto de referência<input type="text" id="referencePoint"></label>
+        </div>
+
+        <label>
+          Melhor dia ou horário
+          <input type="text" id="preferredTime" placeholder="Ex.: sábado, 20 de junho, às 15h">
+        </label>
+        <label>
+          Detalhes do bolo
+          <textarea id="generalNotes" rows="3" placeholder="Tamanho, sabor, recheio, tema, cores e mensagem"></textarea>
+        </label>
+
+        <p class="form-error" id="formError" role="alert"></p>
+        <button class="button button-whatsapp" type="submit">Enviar orçamento pelo WhatsApp</button>
+        <p class="privacy-note">Você revisará a mensagem antes de enviar.</p>
+      </div>
+    </form>
+  </aside>
+
+  <script src="app.js?v=bolos-6"></script>
+</body>
+</html>
