@@ -1,5 +1,5 @@
-const WHATSAPP_NUMBER = "5548999999999";
-const MAPS_URL = "https://maps.app.goo.gl/PXNwevDdLcSttzAp9";
+const WHATSAPP_NUMBER = "554899695663";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Rua%200%2C%2000";
 
 const products = [
   {
@@ -178,9 +178,9 @@ function updateFulfillment() {
 }
 
 function nextQuoteNumber() {
-  const current = Number(localStorage.getItem("cravoCanelaQuoteNumber") || "0");
+  const current = Number(localStorage.getItem("padariaQuoteNumber") || "0");
   const next = current + 1;
-  localStorage.setItem("cravoCanelaQuoteNumber", String(next));
+  localStorage.setItem("padariaQuoteNumber", String(next));
   return String(next).padStart(4, "0");
 }
 
@@ -218,7 +218,7 @@ function buildWhatsAppMessage() {
   const fulfillment = selectedFulfillment();
   const lines = [
     `*PEDIDO DE ORÇAMENTO #${quoteNumber}*`,
-    "*Cravo e Canela Bolos*",
+    "*Padaria*",
     "",
     "*PRODUTOS DE INTERESSE*"
   ];
